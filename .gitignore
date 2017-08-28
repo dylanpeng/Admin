@@ -1,0 +1,9 @@
+/packages
+/Peng.Dylan.Admin/bin
+/Peng.Dylan.Admin/Properties
+/Peng.Dylan.BLL/*
+/Peng.Dylan.Common/obj
+/Peng.Dylan.Common/bin
+/Peng.Dylan.DAL/obj
+/Peng.Dylan.DAL/bin
+/Peng.Dylan.Admin/obj

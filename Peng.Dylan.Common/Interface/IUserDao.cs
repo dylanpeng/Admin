@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Peng.Dylan.Common.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +14,12 @@ namespace Peng.Dylan.Common
         /// </summary>
         /// <returns></returns>
         int GetUserId();
+
+        /// <summary>
+        /// 添加用户
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        int AddUser(AccountUser user);
     }
 }
