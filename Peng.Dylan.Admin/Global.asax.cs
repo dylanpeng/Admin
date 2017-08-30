@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Peng.Dylan.Admin.AuthenticationClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,12 @@ namespace Peng.Dylan.Admin
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        protected void Application_PostAuthenticateRequest(object sender, System.EventArgs e)
+        {
+            HttpContext.Current.User =
+                HttpFormsAuthentication.TryParsePrincipal(HttpContext.Current);
         }
     }
 }

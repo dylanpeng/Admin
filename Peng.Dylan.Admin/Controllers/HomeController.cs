@@ -11,7 +11,7 @@ namespace Peng.Dylan.Admin.Controllers
     {
         public ActionResult Index()
         {
-            var userId = UserBLL.AddUser();
+            //var userId = UserBLL.AddUser();
             return View();
         }
 
