@@ -19,8 +19,8 @@ namespace Peng.Dylan.DAL
         }
 
         #region 数据集  
+        public DbSet<Account> Accounts { get; set; }
         public DbSet<AccountUser> AccountUsers { get; set; }
-
         #endregion
     }
 }

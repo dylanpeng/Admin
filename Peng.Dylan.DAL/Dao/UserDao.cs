@@ -37,7 +37,6 @@ namespace Peng.Dylan.DAL
             {
                 return -1;
             }
-            return user.AccountUserId;
         }
     }
 

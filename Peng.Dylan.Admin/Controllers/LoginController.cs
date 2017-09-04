@@ -1,4 +1,5 @@
 ﻿using Peng.Dylan.Admin.AuthenticationClasses;
+using Peng.Dylan.BLL.Classes;
 using Peng.Dylan.Common;
 using System;
 using System.Collections.Generic;
@@ -22,13 +23,29 @@ namespace Peng.Dylan.Admin.Controllers
         [AllowAnonymous]
         public ActionResult Index(string name, string password, bool rememberMe, string returnUrl)
         {
-            var account = new UserData()
+            if (string.IsNullOrEmpty(name))
             {
-                UserName = name,
-                UserId = 110,
+                ViewBag.ErrorMsg = "用户名不能为空！";
+                return View();
+            }
+            var account = AccountBLL.GetAccountByName(name);
+            if (account == null)
+            {
+                ViewBag.ErrorMsg = "用户不存在！";
+                return View();
+            }
+            if(account.Password != password)
+            {
+                ViewBag.ErrorMsg = "密码不正确！";
+                return View();
+            }
+            var accountView = new UserData()
+            {
+                UserName = account.Name,
+                UserId = account.ID,
                 Roles = new List<int>() { 1, 2, 3 }
             };
-            HttpFormsAuthentication.SetAuthenticationCoolie(account, rememberMe ? 7 : 0);
+            HttpFormsAuthentication.SetAuthenticationCoolie(accountView, rememberMe ? 7 : 0);
             if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/") && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
             {
                 return Redirect(returnUrl);

@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Dao\AccountDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
     <Compile Include="DContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
