@@ -79,6 +79,7 @@ namespace Peng.Dylan.Admin.Controllers
         [AllowAnonymous]
         public ActionResult Register(UserAccount model)
         {
+            //验证
             if (ModelState.IsValid)
             {
                 var user = new Account { Name = model.Email, Password = model.Password, AddDate = DateTime.Now };
