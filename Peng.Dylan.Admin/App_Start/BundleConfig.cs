@@ -26,6 +26,23 @@ namespace Peng.Dylan.Admin
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+
+            #region 
+            bundles.Add(new ScriptBundle("~/bundles/H-ui.admin").Include(
+                      "~/Content/H-ui.admin/lib/jquery/1.9.1/jquery.min.js",
+                      "~/Content/H-ui.admin/lib/layer/2.4/layer.js",
+                      "~/Content/H-ui.admin/h-ui/js/H-ui.js",
+                      "~/Content/H-ui.admin/h-ui.admin/js/H-ui.admin.page.js"));
+
+            bundles.Add(new StyleBundle("~/H-ui.admin/css").Include(
+                      "~/Content/H-ui.admin/h-ui/css/H-ui.min.css",
+                      "~/Content/H-ui.admin/h-ui/css/H-ui.admin.css",
+                      "~/Content/H-ui.admin/lib/Hui-iconfont/1.0.8/iconfont.css",
+                      "~/Content/H-ui.admin/h-ui.admin/skin/default/skin.css",
+                      "~/Content/H-ui.admin/h-ui.admin/css/style.css"
+                      ));
+            #endregion
         }
     }
 }
