@@ -8,14 +8,14 @@ using System.Text;
 
 namespace Peng.Dylan.DAL
 {
-    public class AccountDao : IAccountDao
+    public class AdminDao : IAdminDao
     {
         /// <summary>
         /// 根据账户名查询账户
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public Account GetAccountByName(string name)
+        public AdminEntity GetAdminByName(string name)
         {
             try
             {
@@ -23,7 +23,7 @@ namespace Peng.Dylan.DAL
                     return null;
                 using (var context = new DContext())
                 {
-                    var result = context.Accounts.Where(q => q.Name == name).FirstOrDefault();
+                    var result = context.Admins.Where(q => q.Name == name).FirstOrDefault();
                     return result;
                 }
             }
@@ -38,7 +38,7 @@ namespace Peng.Dylan.DAL
         /// </summary>
         /// <param name="account"></param>
         /// <returns></returns>
-        public int AddAccount(Account account)
+        public int AddAdmin(AdminEntity account)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace Peng.Dylan.DAL
                     return -1;
                 using (var context = new DContext())
                 {
-                    context.Accounts.Add(account);
+                    context.Admins.Add(account);
                     context.SaveChanges();
                     return account.ID;
                 }
@@ -62,7 +62,7 @@ namespace Peng.Dylan.DAL
         /// </summary>
         /// <param name="account"></param>
         /// <returns></returns>
-        public int UpdateAccount(Account account)
+        public int UpdateAdmin(AdminEntity account)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace Peng.Dylan.DAL
                     return -1;
                 using (var context = new DContext())
                 {
-                    var dbAccount = context.Accounts.Where(q => q.ID == account.ID).FirstOrDefault();
+                    var dbAccount = context.Admins.Where(q => q.ID == account.ID).FirstOrDefault();
                     if (dbAccount == null)
                         return -1;
                     dbAccount.Name = account.Name;

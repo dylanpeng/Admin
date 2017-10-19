@@ -29,7 +29,7 @@ namespace Peng.Dylan.Admin.Controllers
                 ViewBag.ErrorMsg = "用户名不能为空！";
                 return View();
             }
-            var account = AccountBLL.GetAccountByName(name);
+            var account = AdminBLL.GetAccountByName(name);
             if (account == null)
             {
                 ViewBag.ErrorMsg = "用户不存在！";
@@ -82,8 +82,8 @@ namespace Peng.Dylan.Admin.Controllers
             //验证
             if (ModelState.IsValid)
             {
-                var user = new Account { Name = model.Email, Password = model.Password, AddDate = DateTime.Now };
-                var result = AccountBLL.AddAccount(user);
+                var user = new Common.Entities.AdminEntity { Name = model.Email, Password = model.Password, AddDate = DateTime.Now };
+                var result = AdminBLL.AddAccount(user);
                 if (result > 0)
                 {
                     var accountView = new UserData()

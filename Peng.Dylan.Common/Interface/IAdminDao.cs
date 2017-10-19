@@ -7,27 +7,27 @@ using System.Text;
 
 namespace Peng.Dylan.Common
 {
-    public interface IAccountDao
+    public interface IAdminDao
     {
         /// <summary>
         /// 根据账户名查询账户
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        Account GetAccountByName(string name);
+        AdminEntity GetAdminByName(string name);
 
         /// <summary>
         /// 添加账户
         /// </summary>
         /// <param name="account"></param>
         /// <returns></returns>
-        int AddAccount(Account account);
+        int AddAdmin(AdminEntity account);
 
         /// <summary>
         /// 更新账户
         /// </summary>
         /// <param name="account"></param>
         /// <returns></returns>
-        int UpdateAccount(Account account);
+        int UpdateAdmin(AdminEntity account);
     }
 }

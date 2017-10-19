@@ -8,8 +8,8 @@ using System.Text;
 
 namespace Peng.Dylan.Common.Entities
 {
-    [Table("account")]
-    public class Account
+    [Table("admin")]
+    public class AdminEntity
     {
         /// <summary>  
         /// 用户ID  

@@ -56,9 +56,9 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Classes\UserAccount.cs" />
     <Compile Include="Classes\UserData.cs" />
-    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\AdminEntity.cs" />
     <Compile Include="Entities\AccountUser.cs" />
-    <Compile Include="Interface\IAccountDao.cs" />
+    <Compile Include="Interface\IAdminDao.cs" />
     <Compile Include="Interface\IUserDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
