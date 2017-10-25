@@ -34,6 +34,8 @@
     @RenderBody()
     <!--_footer 作为公共模版分离出去-->
     @Scripts.Render("~/bundles/H-ui.admin")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
     <!--/_footer /作为公共模版分离出去-->
     <!--/请在上方写此页面业务相关的脚本-->
     @RenderSection("scripts", required: false)

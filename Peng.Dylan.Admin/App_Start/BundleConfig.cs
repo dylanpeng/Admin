@@ -40,7 +40,8 @@ namespace Peng.Dylan.Admin
                       "~/Content/H-ui.admin/h-ui/css/H-ui.admin.css",
                       "~/Content/H-ui.admin/lib/Hui-iconfont/1.0.8/iconfont.css",
                       "~/Content/H-ui.admin/h-ui.admin/skin/default/skin.css",
-                      "~/Content/H-ui.admin/h-ui.admin/css/style.css"
+                      "~/Content/H-ui.admin/h-ui.admin/css/style.css",
+                      "~/Content/H-ui.admin/h-ui/css/ExtendStyle.css"
                       ));
             #endregion
         }

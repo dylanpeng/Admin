@@ -215,6 +215,7 @@
     <Content Include="Content\H-ui.admin\h-ui.admin\skin\yellow\acrossTab.png" />
     <Content Include="Content\H-ui.admin\h-ui.admin\skin\yellow\icon_arrow.png" />
     <Content Include="Content\H-ui.admin\h-ui.admin\skin\yellow\skin.css" />
+    <Content Include="Content\H-ui.admin\h-ui\css\ExtendStyle.css" />
     <Content Include="Content\H-ui.admin\h-ui\css\H-ui.admin.css" />
     <Content Include="Content\H-ui.admin\h-ui\css\H-ui.css" />
     <Content Include="Content\H-ui.admin\h-ui\css\H-ui.ie.css" />
