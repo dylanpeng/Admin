@@ -55,8 +55,10 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Dao\AdminDao.cs" />
+    <Compile Include="Dao\RoleDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
     <Compile Include="DContext.cs" />
+    <Compile Include="EFEntityTypeConfiguration\RoleConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Classes\AdminBLL.cs" />
+    <Compile Include="Classes\RoleDLL.cs" />
     <Compile Include="Classes\UserBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnityInstance.cs" />

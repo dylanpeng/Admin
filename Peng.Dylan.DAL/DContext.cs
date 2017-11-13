@@ -21,6 +21,17 @@ namespace Peng.Dylan.DAL
         #region 数据集  
         public DbSet<AdminEntity> Admins { get; set; }
         public DbSet<AccountUser> AccountUsers { get; set; }
+        public DbSet<RoleEntity> Roles { get; set; }
+        public DbSet<PermissionEntity> Permissions { get; set; }
+        public DbSet<RoleAdmin> RoleAdmins { get; set; }
+        public DbSet<RolePermission> RolePermissions { get; set; }
+        #endregion
+
+        #region Fluent API配置
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new RoleConfiguration());
+        }
         #endregion
     }
 }
