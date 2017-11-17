@@ -1,19 +1,20 @@
 ﻿@{
     ViewBag.Title = "Index";
     ViewBag.RootId = "6";
-    ViewBag.ItemId = "8";
+    ViewBag.ItemId = "6";
 }
 <section class="Hui-article-box">
-    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 管理员管理 <span class="c-gray en">&gt;</span> 管理员列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 角色管理 <span class="c-gray en">&gt;</span> 角色列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
     <div class="pd-20 text-c">
         <div class="text-c">
             <input type="text" name="" id="" placeholder="栏目名称、id" style="width:250px" class="input-text">
             <button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜索</button>
         </div>
-        <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">
-            <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> 
-            <a class="btn btn-primary radius"  href="@Url.Action("Add","Admin")"><i class="Hui-iconfont">&#xe600;</i> 添加管理员</a>
-            </span> <span class="r">共有数据：<strong>54</strong> 条</span> 
+        <div class="cl pd-5 bg-1 bk-gray mt-20">
+            <span class="l">
+                <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+                <a class="btn btn-primary radius" href="@Url.Action("Add","Role")"><i class="Hui-iconfont">&#xe600;</i> 添加角色</a>
+            </span> <span class="r">共有数据：<strong>54</strong> 条</span>
         </div>
         <div class="mt-20">
             <table class="table table-border table-bordered table-hover table-bg table-sort">

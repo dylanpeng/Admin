@@ -1,0 +1,45 @@
+﻿@model Peng.Dylan.Common.Entities.RoleEntity
+@{
+    ViewBag.Title = "Add";
+    ViewBag.RootId = "6";
+    ViewBag.ItemId = "6";
+}
+@section style{
+    <style type="text/css">
+        .row {
+            box-sizing: border-box;
+            margin-left: -15px;
+            margin-right: 0px;
+        }
+    </style>
+}
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 角色管理 <span class="c-gray en">&gt;</span> 添加角色 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="Hui-article">
+        @using (Html.BeginForm("Add", "Role", FormMethod.Post, new { @class = "form form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>角色ID：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.TextBoxFor(m => m.ID, new { @class = "input-text" })
+                    @Html.ValidationMessageFor(m => m.ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>角色名：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.TextBoxFor(m => m.RoleName, new { @class = "input-text" })
+                    @Html.ValidationMessageFor(m => m.RoleName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                    <button class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 提交</button>
+                    <button onClick="javascript:window.location.href='@Url.Action("Index","Role")'" class="btn btn-default radius" type="button">&nbsp;&nbsp;返回&nbsp;&nbsp;</button>
+                </div>
+            </div>
+        }
+    </div>
+</section>

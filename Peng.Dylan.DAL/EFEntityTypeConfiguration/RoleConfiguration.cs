@@ -1,6 +1,7 @@
 ﻿using Peng.Dylan.Common.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,9 @@ namespace Peng.Dylan.DAL
         public RoleConfiguration()
         {
             ToTable("role")
-            .HasKey(q => q.ID);
+            .HasKey(q => q.ID)
+            //id不自增
+            .Property(q => q.ID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
         }
     }
 }
