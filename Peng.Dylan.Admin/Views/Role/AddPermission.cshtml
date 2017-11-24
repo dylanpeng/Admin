@@ -1,0 +1,68 @@
+﻿@model Peng.Dylan.Common.Entities.PermissionEntity
+@{
+    ViewBag.Title = "AddPermission";
+    ViewBag.RootId = "6";
+    ViewBag.ItemId = "7";
+}
+@section style{
+    <style type="text/css">
+        .row {
+            box-sizing: border-box;
+            margin-left: -15px;
+            margin-right: 0px;
+        }
+    </style>
+}
+<section class="Hui-article-box">
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 权限管理 <span class="c-gray en">&gt;</span> 添加权限 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="Hui-article">
+        @using (Html.BeginForm("AddPermission", "Role", FormMethod.Post, new { @class = "form form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>权限ID：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.TextBoxFor(m => m.ID, new { @class = "input-text" })
+                    @Html.ValidationMessageFor(m => m.ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>权限名：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.TextBoxFor(m => m.PermissionName, new { @class = "input-text" })
+                    @Html.ValidationMessageFor(m => m.PermissionName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>排序：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.TextBoxFor(m => m.Index, new { @class = "input-text" })
+                    @Html.ValidationMessageFor(m => m.Index, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>层级：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.TextBoxFor(m => m.Level, new { @class = "input-text" })
+                    @Html.ValidationMessageFor(m => m.Level, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>父权限ID：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.TextBoxFor(m => m.ParentId, new { @class = "input-text" })
+                    @Html.ValidationMessageFor(m => m.ParentId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row cl" style="text-align:center"><span class="field-validation-error text-danger">@ViewBag.ErrorMsg</span></div>
+            @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                    <button class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 提交</button>
+                    <button onClick="javascript:window.location.href='@Url.Action("Index","Role")'" class="btn btn-default radius" type="button">&nbsp;&nbsp;返回&nbsp;&nbsp;</button>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+

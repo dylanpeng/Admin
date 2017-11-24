@@ -33,6 +33,7 @@
                     @Html.ValidationMessageFor(m => m.RoleName, "", new { @class = "text-danger" })
                 </div>
             </div>
+            <div class="row cl" style="text-align:center"><span class="field-validation-error text-danger">@ViewBag.ErrorMsg</span></div>
             @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
             <div class="row cl">
                 <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">

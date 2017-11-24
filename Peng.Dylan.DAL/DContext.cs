@@ -31,6 +31,7 @@ namespace Peng.Dylan.DAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new RoleConfiguration());
+            modelBuilder.Configurations.Add(new PermissionConfiguration());
         }
         #endregion
     }

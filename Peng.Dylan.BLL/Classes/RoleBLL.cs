@@ -13,7 +13,7 @@ namespace Peng.Dylan.BLL.Classes
         /// <summary>
         /// 添加账户
         /// </summary>
-        /// <param name="account"></param>
+        /// <param name="role"></param>
         /// <returns></returns>
         public static int AddRole(RoleEntity role)
         {
@@ -21,6 +21,25 @@ namespace Peng.Dylan.BLL.Classes
             {
                 var dao = UnityInstance.GetInstanceDAL<IRoleDao>();
                 var result = dao.AddRole(role);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+        }
+
+        /// <summary>
+        /// 添加权限
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <returns></returns>
+        public static int AddPermission(PermissionEntity permission)
+        {
+            try
+            {
+                var dao = UnityInstance.GetInstanceDAL<IRoleDao>();
+                var result = dao.AddPermission(permission);
                 return result;
             }
             catch (Exception ex)

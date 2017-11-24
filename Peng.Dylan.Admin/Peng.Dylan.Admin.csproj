@@ -1293,6 +1293,8 @@
     <Content Include="Views\Admin\Add.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
     <Content Include="Views\Role\Add.cshtml" />
+    <Content Include="Views\Role\PermissionList.cshtml" />
+    <Content Include="Views\Role\AddPermission.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

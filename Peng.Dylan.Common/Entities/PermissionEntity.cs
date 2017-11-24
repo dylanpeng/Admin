@@ -19,18 +19,21 @@ namespace Peng.Dylan.Common.Entities
         /// </summary>  
         [Column("ID")]
         [Key]
+        //[Required]
         public int ID { get; set; }
 
         /// <summary>
-        /// 角色名
+        /// 权限名
         /// </summary>
         [Column("PERMISSION_NAME")]
+        [Required]
         public string PermissionName { get; set; }
 
         /// <summary>
         /// 排序
         /// </summary>
         [Column("INDEX")]
+        //[Required]
         public int Index { get; set; }
 
         /// <summary>
@@ -42,7 +45,7 @@ namespace Peng.Dylan.Common.Entities
         /// <summary>
         /// 当前层级
         /// </summary>
-        [Column("PARENT_LEVEL")]
-        public int ParentLevel { get; set; }
+        [Column("PARENT_ID")]
+        public int ParentId { get; set; }
     }
 }
