@@ -85,5 +85,31 @@ namespace Peng.Dylan.DAL
                 return -1;
             }   
         }
+
+        /// <summary>
+        /// 获取管理员列表
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        public List<AdminEntity> GetAdminEntityList(int pageIndex, int pageSize)
+        {
+            try
+            {
+                if (pageIndex <=  0)
+                    pageIndex = 1;
+                if (pageSize <= 0)
+                    pageSize = 10;
+                using (var context = new DContext())
+                {
+                    var dbAccount = context.Admins.Where(q => q.IsDeleted == false).OrderByDescending(q => q.AddDate).Skip((pageIndex - 1) * pageSize).ToList(); ;
+                    return dbAccount;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

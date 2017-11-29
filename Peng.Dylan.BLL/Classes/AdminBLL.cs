@@ -42,5 +42,36 @@ namespace Peng.Dylan.BLL.Classes
                 return -1;
             }
         }
+
+        /// <summary>
+        /// 获取用户列表
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        public static List<UserData> GetUserDataList(int pageIndex, int pageSize)
+        {
+            try
+            {
+                var dao = UnityInstance.GetInstanceDAL<IAdminDao>();
+                var adminiList = dao.GetAdminEntityList(pageIndex, pageSize);
+                var result = new List<UserData>();
+                if (adminiList != null && adminiList.Count > 0)
+                {
+                    foreach (var admin in adminiList)
+                    {
+                        var user = new UserData();
+                        user.UserId = admin.ID;
+                        user.UserName = admin.Name;
+                        result.Add(user);
+                    }
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

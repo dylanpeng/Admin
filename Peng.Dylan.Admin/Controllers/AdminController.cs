@@ -52,5 +52,12 @@ namespace Peng.Dylan.Admin.Controllers
             // 如果我们进行到这一步时某个地方出错，则重新显示表单
             return View(model);
         }
+
+        [AllowAnonymous]
+        public JsonResult GetUserDataList(int pageIndex, int pageSize)
+        {
+            var userList = AdminBLL.GetUserDataList(pageIndex, pageSize);
+            return Json(userList, JsonRequestBehavior.AllowGet);
+        }
     }
 }

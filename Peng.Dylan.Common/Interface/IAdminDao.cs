@@ -29,5 +29,13 @@ namespace Peng.Dylan.Common
         /// <param name="account"></param>
         /// <returns></returns>
         int UpdateAdmin(AdminEntity account);
+
+        /// <summary>
+        /// 获取管理员列表
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
+        List<AdminEntity> GetAdminEntityList(int pageIndex, int pageSize);
     }
 }
